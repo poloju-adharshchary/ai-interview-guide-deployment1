@@ -31,7 +31,7 @@ function History() {
 
       const response =
         await axios.get(
-          `http://127.0.0.1:8000/user-sessions/${userId}`
+          `https://loving-dream-production-48cc.up.railway.app/user-sessions/${userId}`
         );
 
       const data =
@@ -138,7 +138,7 @@ function History() {
   ) => {
     try {
       await axios.put(
-        `http://127.0.0.1:8000/rename-session/${sessionId}`,
+        `https://loving-dream-production-48cc.up.railway.app/rename-session/${sessionId}`,
         {
           session_name: newName
         }

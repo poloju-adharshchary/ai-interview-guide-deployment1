@@ -36,7 +36,7 @@ function InterviewCompleted() {
 
           const response =
             await axios.get(
-              `http://127.0.0.1:8000/get-session-details/${sessionId}`
+              `https://loving-dream-production-48cc.up.railway.app/get-session-details/${sessionId}`
             );
 
           const answers =

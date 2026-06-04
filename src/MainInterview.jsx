@@ -153,7 +153,7 @@ const [score, setScore] =
 
       const response =
         await axios.post(
-          "http://127.0.0.1:8000/generate-question",
+          "https://loving-dream-production-48cc.up.railway.app/generate-question",
           {
             role: role,
             difficulty: difficulty
@@ -243,7 +243,7 @@ setQuestion(aiQuestion);
 
           const response =
             await axios.post(
-              "http://127.0.0.1:8000/speech-to-text",
+              "https://loving-dream-production-48cc.up.railway.app/speech-to-text",
               formData
             );
 
@@ -268,7 +268,7 @@ setQuestion(aiQuestion);
 );
           const evaluation =
   await axios.post(
-    "http://127.0.0.1:8000/evaluate-answer",
+    "https://loving-dream-production-48cc.up.railway.app/evaluate-answer",
     {
       session_id:
   sessionIdRef.current,
@@ -341,7 +341,7 @@ setScore(aiScore);
 
       const response =
   await axios.post(
-    "http://127.0.0.1:8000/create-session",
+    "https://loving-dream-production-48cc.up.railway.app/create-session",
     {
       user_id: Number( localStorage.getItem("user_id")),
       role: role,
