@@ -14,7 +14,7 @@ const loadSessions = async () => {
     localStorage.getItem("user_id");
 
   const res = await fetch(
-    `http://localhost:8000/chat-sessions/${userId}`
+    `https://loving-dream-production-48cc.up.railway.app/chat-sessions/${userId}`
   );
 
   const data =
@@ -149,7 +149,7 @@ const [messages, setMessages] = useState([
       );
 
     await fetch(
-      `http://localhost:8000/delete-all-chat-sessions/${userId}`,
+      `https://loving-dream-production-48cc.up.railway.app/delete-all-chat-sessions/${userId}`,
       {
         method: "DELETE",
       }
@@ -199,7 +199,7 @@ const [messages, setMessages] = useState([
         setCurrentSessionId(chat.id);
 
         const res = await fetch(
-          `http://localhost:8000/chat-messages/${chat.id}`
+          `https://loving-dream-production-48cc.up.railway.app/chat-messages/${chat.id}`
         );
 
         const data = await res.json();
@@ -387,7 +387,7 @@ const [messages, setMessages] = useState([
 if (!sessionId) {
 
   const createRes = await fetch(
-    "http://localhost:8000/create-chat-session",
+    "https://loving-dream-production-48cc.up.railway.app/create-chat-session",
     {
       method: "POST",
       headers: {
@@ -420,7 +420,7 @@ if (!sessionId) {
   ]);
 
   await fetch(
-  "http://localhost:8000/save-chat-message",
+  "https://loving-dream-production-48cc.up.railway.app/save-chat-message",
   {
     method: "POST",
     headers: {
@@ -441,7 +441,7 @@ if (!sessionId) {
   setIsThinking(true);
 
   const res = await fetch(
-    "http://localhost:8000/chat",
+    "https://loving-dream-production-48cc.up.railway.app/chat",
     {
       method: "POST",
       headers: {
@@ -502,7 +502,7 @@ while (true) {
   ]);
 
   await fetch(
-  "http://localhost:8000/save-chat-message",
+  "https://loving-dream-production-48cc.up.railway.app/save-chat-message",
   {
     method: "POST",
     headers: {
@@ -516,7 +516,7 @@ while (true) {
   }
 );
 
-await fetch(`http://localhost:8000/generate-chat-title/${sessionId}`,
+await fetch(`https://loving-dream-production-48cc.up.railway.app/generate-chat-title/${sessionId}`,
   {
     method: "PUT",
     headers: {

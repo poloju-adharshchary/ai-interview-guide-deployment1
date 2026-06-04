@@ -27,7 +27,7 @@ function App() {
   try {
 
     const res = await fetch(
-      "http://localhost:8000/check-login",
+      "https://loving-dream-production-48cc.up.railway.app/check-login",
       {
         credentials: "include",
       }

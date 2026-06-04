@@ -994,7 +994,7 @@ async def google_login(
 ):
 
     redirect_uri = (
-        "http://localhost:8000/google-callback"
+        "https://loving-dream-production-48cc.up.railway.app/google-callback"
     )
 
     return await oauth.google.authorize_redirect(
@@ -1009,7 +1009,7 @@ async def github_login(
 
     return await oauth.github.authorize_redirect(
         request,
-        "http://localhost:8000/github-callback"
+        "https://loving-dream-production-48cc.up.railway.app/github-callback"
     )
 
 @app.get("/google-callback")

@@ -33,7 +33,7 @@ useEffect(() => {
     try {
 
       const res = await fetch(
-        "http://localhost:8000/login",
+        "https://loving-dream-production-48cc.up.railway.app/login",
         {
           method: "POST",
 
@@ -238,7 +238,7 @@ useEffect(() => {
           <button
   onClick={() => {
     window.location.href =
-      "http://localhost:8000/google-login";
+      "https://loving-dream-production-48cc.up.railway.app/google-login";
   }}
 >
   Continue with Google
@@ -247,7 +247,7 @@ useEffect(() => {
           <button
   onClick={() => {
     window.location.href =
-      "http://localhost:8000/github-login";
+      "https://loving-dream-production-48cc.up.railway.app/github-login";
   }}
 >
   Continue with GitHub

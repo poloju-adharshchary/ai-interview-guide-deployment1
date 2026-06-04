@@ -17,7 +17,7 @@ function Profile() {
 const loadProfile = async () => {
 
   const res = await fetch(
-    `http://localhost:8000/user-profile/${userId}`
+    `https://loving-dream-production-48cc.up.railway.app/user-profile/${userId}`
   );
 
   const data =
@@ -154,7 +154,7 @@ const [photo, setPhoto] =
   );
 
   await fetch(
-    "http://localhost:8000/update-profile-photo",
+    "https://loving-dream-production-48cc.up.railway.app/update-profile-photo",
     {
       method: "PUT",
       headers: {
@@ -215,7 +215,7 @@ const [photo, setPhoto] =
   onClick={async () => {
 
     const res = await fetch(
-      "http://localhost:8000/change-password",
+      "https://loving-dream-production-48cc.up.railway.app/change-password",
       {
         method: "PUT",
         headers: {

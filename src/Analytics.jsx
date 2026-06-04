@@ -32,7 +32,7 @@ function Analytics() {
       localStorage.getItem("user_id");
 
     const res = await fetch(
-      `http://localhost:8000/analytics/${userId}`
+      `https://loving-dream-production-48cc.up.railway.app/analytics/${userId}`
     );
 
     const data =
