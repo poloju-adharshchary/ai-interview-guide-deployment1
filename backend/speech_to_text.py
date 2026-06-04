@@ -1,6 +1,6 @@
 from groq import Groq
-import os
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 
@@ -10,12 +10,11 @@ client = Groq(
 
 def transcribe_audio(audio_path):
 
-    with open(audio_path, "rb") as file:
+    with open(audio_path, "rb") as audio_file:
 
         transcription = client.audio.transcriptions.create(
-            file=file,
-            model="whisper-large-v3",
-            response_format="verbose_json"
+            file=audio_file,
+            model="whisper-large-v3"
         )
 
     return transcription.text
