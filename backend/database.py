@@ -1,22 +1,19 @@
+import os
+from dotenv import load_dotenv
 import mysql.connector
 
-DB_NAME = "ai_interview"
+load_dotenv()
+
+DB_NAME = os.getenv("DB_NAME")
 
 DB_CONFIG = {
-    "host": "localhost",
-    "user": "root",
-    "password": "adhi123"
+    "host": os.getenv("DB_HOST"),
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASSWORD")
 }
 
 def create_database():
-    conn = mysql.connector.connect(
-        host=DB_CONFIG["host"],
-        user=DB_CONFIG["user"],
-        password=DB_CONFIG["password"]
-    )
-    cursor = conn.cursor()
-    cursor.execute(f"CREATE DATABASE IF NOT EXISTS {DB_NAME}")
-    conn.close()
+    pass
 
 def get_db():
     return mysql.connector.connect(
