@@ -7,8 +7,8 @@ import {
 
 import InterviewAvatar from "./InterviewAvatar";
 
-import Female1 from "./assets/interview/female1.png";
-import Female2 from "./assets/interview/female2.png";
+import Female1 from "./assets/interview/Female1.png";
+import Female2 from "./assets/interview/Female2.png";
 import Female3 from "./assets/interview/female3.png";
 import Female4 from "./assets/interview/female4.png";
 
