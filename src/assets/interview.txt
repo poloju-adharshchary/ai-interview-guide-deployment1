@@ -1,0 +1,156 @@
+app.jsx:
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { useState } from "react";
+import Interview from "./Interview";
+import Analytics from "./Analytics";
+import History from "./History";
+import Login from "./Login";
+import Register from "./Register";
+import Dashboard from "./dashboard";
+import About from "./About";
+import Contact from "./Contact";
+import Services from "./Services";
+import Profile from "./Profile";
+import ChatWithAi from "./ChatWithAi";
+
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  return (
+    <Router>
+      <Routes>
+
+        {/* Login */}
+        <Route
+          path="/"
+          element={
+            isLoggedIn ? (
+              <Navigate to="/dashboard" />
+            ) : (
+              <Login
+                goRegister={() => window.location.replace("/register")}
+                goDashboard={() => setIsLoggedIn(true)}
+              />
+            )
+          }
+        />
+
+        {/* Register */}
+        <Route
+          path="/register"
+          element={
+            <Register
+              goLogin={() => window.location.replace("/")}
+              goDashboard={() => setIsLoggedIn(true)}
+            />
+          }
+        />
+
+        {/* Dashboard */}
+        <Route
+  path="/dashboard"
+  element={
+    isLoggedIn ? (
+      <Dashboard logout={() => setIsLoggedIn(false)} />
+    ) : (
+      <Navigate to="/" />
+    )
+  }
+/>
+
+
+        {/* Other Pages */}
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/interview" element={<Interview />} />
+        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/chatwithai" element={<ChatWithAi/>} />
+
+
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+interview.jsx:
+
+import { useNavigate } from "react-router-dom";
+
+function Interview() {
+  const navigate = useNavigate();
+
+  return (
+    <div style={containerStyle}>
+      <h1>Interview Setup</h1>
+      <p>Select role, difficulty level, and start your AI interview session.</p>
+
+      <div style={cardStyle}>
+        <label>Role:</label>
+        <select>
+          <option>Frontend Developer</option>
+          <option>Backend Developer</option>
+          <option>Data Analyst</option>
+        </select>
+
+        <label style={{ marginTop: "15px" }}>Difficulty:</label>
+        <select>
+          <option>Easy</option>
+          <option>Medium</option>
+          <option>Hard</option>
+        </select>
+
+        <button style={primaryBtn} onClick={() => alert("Interview Started!")}>
+          Next 
+        </button>
+      </div>
+
+      <button style={backBtn} onClick={() => navigate("/dashboard")}>
+        Back to Dashboard
+      </button>
+    </div>
+  );
+}
+
+const containerStyle = {
+  padding: "450px",
+  minHeight: "100vh",
+  background: "#c6d9f1"
+};
+
+const cardStyle = {
+  background: "white",
+  padding: "30px",
+  borderRadius: "12px",
+  width: "400px",
+  marginTop: "20px",
+  boxShadow: "0 5px 15px rgba(115, 178, 214, 0.93)",
+  display: "flex",
+  flexDirection: "column"
+};
+
+const primaryBtn = {
+  marginTop: "20px",
+  padding: "10px",
+  background: "#3d8eeb",
+  color: "white",
+  border: "none",
+  borderRadius: "8px",
+  cursor: "pointer"
+};
+
+const backBtn = {
+  marginTop: "30px",
+  padding: "8px 15px",
+  background: "#3d8eeb",
+  border: "none",
+  borderRadius: "6px",
+  cursor: "pointer"
+};
+
+export default Interview;
+

@@ -1,0 +1,19 @@
+const warningTimer = setTimeout(() => {
+
+  speakText(
+    "Please answer the question."
+  );
+
+}, 10000);
+
+const endTimer = setTimeout(() => {
+
+  recorder.stop();
+
+  stream.getTracks().forEach(
+    (track) => track.stop()
+  );
+
+  navigate("/interview-completed");
+
+}, 20000);
