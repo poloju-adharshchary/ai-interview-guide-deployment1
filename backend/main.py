@@ -109,7 +109,7 @@ class SessionRequest(BaseModel):
     difficulty: str
 class ChatSessionRequest(BaseModel):
     user_id: int
-    model_type: str = "Offline LLM"
+    model_type: str = "Online AI"
 class ChatRequest(BaseModel):
     message: str
     model_type: str

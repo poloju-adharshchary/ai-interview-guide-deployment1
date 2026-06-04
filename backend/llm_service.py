@@ -12,7 +12,6 @@ groq_client = Groq(
     api_key=GROQ_API_KEY
 )
 
-OLLAMA_URL = "http://localhost:11434/api/generate"
 
 """def generate_question(role, difficulty):    commenting for deployment
 
@@ -228,9 +227,7 @@ def stream_chat_with_ai(message):
     return stream_online_ai(message)
                 
 
-def generate_chat_title(
-    first_message
-):
+def generate_chat_title(first_message):
 
     prompt = f"""
 Generate a short chat title.
@@ -244,16 +241,23 @@ Message:
 {first_message}
 """
 
-    response = requests.post(
-        OLLAMA_URL,
-        json={
-            "model": "qwen2.5:3b",
-            "prompt": prompt,
-            "stream": False
-        }
+    response = groq_client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
     )
 
-    return response.json()["response"].strip()
+    return (
+        response
+        .choices[0]
+        .message
+        .content
+        .strip()
+    )
 
 def stream_online_ai(message):
     print("ONLINE AI MODE ACTIVATED")
