@@ -37,7 +37,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "http://localhost:5174"
+        "http://localhost:5174",
+        "https://ai-interview-guide-deployment1.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -201,7 +202,8 @@ def login(
     value=str(user["id"]),
     max_age=2592000,
     httponly=True,
-    samesite="lax"
+    secure=True,
+    samesite="none"
 )
     
     return {
@@ -981,8 +983,10 @@ def logout(
 ):
 
     response.delete_cookie(
-        "user_id"
-    )
+    key="user_id",
+    secure=True,
+    samesite="none"
+)
 
     return {
         "success": True
@@ -1089,16 +1093,17 @@ async def google_callback(
 
     response = RedirectResponse(
             url=
-            "http://localhost:5173/dashboard"
+            "https://ai-interview-guide-deployment1.vercel.app/dashboard"
         )
 
     response.set_cookie(
-        key="user_id",
-        value=str(user_id),
-        max_age=2592000,
-        httponly=True,
-        samesite="lax"
-    )
+    key="user_id",
+    value=str(user_id),
+    max_age=2592000,
+    httponly=True,
+    secure=True,
+    samesite="none"
+)
 
     db.close()
 
@@ -1204,16 +1209,17 @@ async def github_callback(
 
     response = RedirectResponse(
         url=
-        "http://localhost:5173/dashboard"
+        "https://ai-interview-guide-deployment1.vercel.app/dashboard"
     )
 
     response.set_cookie(
-        key="user_id",
-        value=str(user_id),
-        max_age=2592000,
-        httponly=True,
-        samesite="lax"
-    )
+    key="user_id",
+    value=str(user_id),
+    max_age=2592000,
+    httponly=True,
+    secure=True,
+    samesite="none"
+)
 
     db.close()
 
