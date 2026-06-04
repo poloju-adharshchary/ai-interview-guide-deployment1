@@ -25,8 +25,34 @@ function Dashboard({ logout })
 <button onClick={() => navigate("/profile")}>Profile</button>
 <button
   className="logout"
-  onClick={() => {
+  onClick={async () => {
+
+    await fetch(
+      "https://loving-dream-production-48cc.up.railway.app/logout",
+      {
+        method: "POST",
+        credentials: "include"
+      }
+    );
+
+    localStorage.removeItem(
+      "cookie_consent"
+    );
+
+    localStorage.removeItem(
+      "user_id"
+    );
+
+    localStorage.removeItem(
+      "user_name"
+    );
+
+    localStorage.removeItem(
+      "user_email"
+    );
+
     logout();
+
   }}
 >
   Sign Out

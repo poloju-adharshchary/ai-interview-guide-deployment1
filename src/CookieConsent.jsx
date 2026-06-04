@@ -16,6 +16,14 @@ function CookieConsent() {
   }, []);
 
   const acceptCookies = () => {
+    const consent =
+localStorage.getItem(
+  "cookie_consent"
+);
+
+if (consent === "accepted") {
+  return null;
+}
 
     localStorage.setItem(
       "cookie_consent",

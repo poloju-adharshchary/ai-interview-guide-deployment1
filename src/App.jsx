@@ -73,8 +73,10 @@ function App() {
 
   return (
     <Router>
-      <CookieConsent />
-      <Routes>
+
+  {!isLoggedIn && <CookieConsent />}
+
+  <Routes>
 
         {/* Login */}
         <Route
