@@ -75,28 +75,6 @@ ai_interview
 
 ## AI Technologies
 
-### Offline AI
-
-Model:
-
-```text
-qwen2.5:3b
-```
-
-Platform:
-
-```text
-Ollama
-```
-
-Used For:
-
-* Interview question generation
-* Interview answer evaluation
-* Chat Assistant
-* Chat title generation
-
----
 
 ### Online AI
 
@@ -160,26 +138,8 @@ Used For:
 
 # AI Modes
 
-## 1. Offline LLM Mode
 
-Uses:
-
-```text
-Ollama
-qwen2.5:3b
-```
-
-Features:
-
-* Fully offline
-* No internet required
-* AI Chat
-* Interview Questions
-* Interview Evaluation
-
----
-
-## 2. Online AI Mode
+## 1. Online AI Mode
 
 Uses:
 
@@ -197,7 +157,7 @@ Features:
 
 ---
 
-## 3. Web Search Mode
+## 2. Web Search Mode
 
 Uses:
 
@@ -566,10 +526,10 @@ History Sidebar
 
 | Feature               | Model                      |
 | --------------------- | -------------------------- |
-| Interview Questions   | qwen2.5:3b                 |
-| Interview Evaluation  | qwen2.5:3b                 |
-| Offline Chat          | qwen2.5:3b                 |
-| Chat Title Generation | qwen2.5:3b                 |
+| Interview Questions   | Llama 3.3 70B              |
+| Interview Evaluation  | Llama 3.3 70B              |
+| Offline Chat          | Llama 3.3 70B              |
+| Chat Title Generation | Llama 3.3 70B              |
 | Online AI             | Llama 3.3 70B              |
 | Web Search AI         | DuckDuckGo + Llama 3.3 70B |
 | Speech To Text        | Faster Whisper             |
