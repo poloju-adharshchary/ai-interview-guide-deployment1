@@ -13,8 +13,7 @@ The platform provides:
 * Interview history management
 * AI Chat Assistant
 * Multiple AI modes
-
-  * Offline LLM
+* 
   * Online AI
   * Web Search AI
 * Speech-to-Text support
