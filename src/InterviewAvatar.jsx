@@ -71,7 +71,8 @@ function InterviewAvatar({
             fontSize: "17px",
             lineHeight: "1.6",
             maxWidth: "350px",
-            wordBreak: "break-word"
+            wordBreak: "break-word",
+            color: "black"
           }}
         >
           {message}

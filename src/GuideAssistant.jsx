@@ -73,7 +73,8 @@ const messageStyle = {
   boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
   maxWidth: "400px",
   fontSize: "16px",
-  textAlign: "left"
+  textAlign: "left",
+  color: "black"
 };
 
 export default GuideAssistant;
