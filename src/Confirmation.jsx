@@ -136,7 +136,8 @@ const instructionBox = {
   padding: "20px",
   background: "#edf4ff",
   borderRadius: "12px",
-  lineHeight: "1.8"
+  lineHeight: "1.8",
+  color: "#000"
 };
 
 const btnContainer = {
